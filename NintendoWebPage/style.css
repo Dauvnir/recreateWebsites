@@ -10,17 +10,14 @@
 }
 
 /* NAVBAR*/
-
-/*LEFT SIDE */
 .wrapper {
 	display: flex;
 	border-bottom: 1px solid var(--separator);
 	position: sticky;
 	height: 3.3rem;
 }
-
+/*LEFT SIDE */
 .navBarSearch {
-	align-self: flex-start;
 	width: 50%;
 	height: inherit;
 }
