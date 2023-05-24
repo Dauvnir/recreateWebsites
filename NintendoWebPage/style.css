@@ -1,44 +1,65 @@
 * {
 	margin: 0;
 	box-sizing: border-box;
+	font-family: 'museo-sans', sans-serif;
+	font-weight: 600;
 }
 :root {
 	--fontcolornav: rgb(72, 72, 72);
+	--separator: rgb(218, 218, 218);
 }
 
-@media (max-width: 640px) {
-	.navBarSearch {
-		max-width: 30%;
-	}
-
-	.navBarList {
-		min-width: 50%;
-	}
-}
 /* NAVBAR*/
-header {
+
+/*LEFT SIDE */
+.wrapper {
 	display: flex;
-	border-bottom: 1px solid rgb(218, 218, 218);
-	min-height: 3rem;
+	border-bottom: 1px solid var(--separator);
+	position: sticky;
+	height: 3.3rem;
 }
 
 .navBarSearch {
-	background-color: red;
-	min-width: 70%;
+	align-self: flex-start;
+	width: 50%;
+	height: inherit;
 }
 
+.nintendoIcon {
+	height: inherit;
+	background: none;
+	border: 0px;
+	background-color: rgb(224, 25, 25);
+	color: white;
+	padding: 1rem 1.165rem;
+}
+/*LEFT SIDE */
+
+/*RIGHT SIDE */
 .navBarList {
-	min-width: 30%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	width: 50%;
 	color: var(--fontcolornav);
-	padding: 0.6rem 0.3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	gap: 1.5rem;
+	align-items: center;
+	padding: 0 0.5rem;
+	font-size: 0.8rem;
 }
 
 .navBarList > * {
+	display: inline-block;
 	cursor: pointer;
+	transition: color 0.3s ease-out;
 }
+.navBarList > div > a {
+	align-items: center;
+}
+.navBarList > div:hover {
+	color: red;
+}
+
 .fa-question {
 	color: white;
 }
@@ -46,5 +67,6 @@ header {
 	display: flex;
 	gap: 0.35rem;
 }
+/*RIGHT SIDE */
 
 /* NAVBAR*/
