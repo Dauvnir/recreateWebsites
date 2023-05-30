@@ -2,6 +2,11 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
+	letter-spacing: 0.03rem;
+}
+svg {
+	vertical-align: middle;
+	margin-bottom: 0.125rem;
 }
 :root {
 	--fontcolornav: rgb(72, 72, 72);
@@ -9,7 +14,7 @@
 	--navbarcolor: rgb(224, 25, 25);
 }
 
-/* NAVBAR*/
+/* NAVBAR UPPER*/
 @media screen and (max-width: 950px) {
 	.wrapper {
 		background-color: var(--navbarcolor);
@@ -27,6 +32,9 @@
 	}
 	.nintendoIcon > svg:not(:hover) {
 		transition: all 0.3s ease-in-out;
+	}
+	.underNavBarList:not(:first-child) {
+		display: none;
 	}
 }
 
@@ -74,12 +82,11 @@
 	font-size: 1.125rem;
 }
 .nintendoIcon {
-	height: inherit;
 	background: none;
 	border: 0px;
 	background-color: var(--navbarcolor);
 	color: white;
-	padding: 1rem 1.165rem;
+	padding: 1.0375rem 1.165rem;
 	cursor: pointer;
 }
 .buttonMenuBar {
@@ -98,11 +105,11 @@
 	transition: 0.5s ease-in-out;
 }
 .navBarSearchCategoryIcon {
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 .rotateIcon {
 	rotate: 180deg;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 /*LEFT SIDE */
 
@@ -142,4 +149,26 @@
 }
 /*RIGHT SIDE */
 
-/* NAVBAR*/
+/* NAVBAR 	UPPER*/
+/* NAVBAR DOWN*/
+.underNavBarList {
+	height: 2.7rem;
+	border-bottom: 1px solid var(--separator);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2.3rem;
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--fontcolornav);
+	margin-left: 1rem;
+}
+.underNavBarList > div {
+	cursor: pointer;
+}
+
+.underNavBarList > div > span {
+	margin: 0 0.45rem;
+}
+
+/* NAVBAR DOWN*/

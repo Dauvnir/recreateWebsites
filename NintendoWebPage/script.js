@@ -16,3 +16,8 @@ const toggleArrow = () => {
 searchInput.addEventListener('click', changeInputPlaceholder);
 faIconArrow.addEventListener('click', toggleArrow);
 menuButtonSearchBar.addEventListener('click', toggleArrow);
+//
+//faIconArrow.forEach((searchIcon) => {
+//	searchIcon.addEventListener('click', () => searchIcon.classList.toggle('rotateIcon'));
+//});
+//
