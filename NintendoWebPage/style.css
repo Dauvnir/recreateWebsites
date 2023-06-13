@@ -61,11 +61,7 @@ svg {
 	justify-content: space-between;
 	padding-right: 5rem;
 }
-.inputSearchBar:hover {
-	color: red;
-	border-color: red;
-	transition: 0.5s;
-}
+
 .searchBar > * {
 	cursor: pointer;
 	display: inline-block;
@@ -97,20 +93,26 @@ svg {
 	font-family: 'Raleway', sans-serif;
 	color: var(--fontcolornav);
 	white-space: nowrap;
+	margin-right: 0.6rem;
 }
-.buttonMenuBar:hover,
+
+#allCategoriesDiv {
+	white-space: nowrap;
+}
 .searchBar:hover {
 	border-color: red;
+	transition: 0.5s;
+}
+#allCategoriesDiv:hover > * {
 	color: red;
-	transition: 0.5s ease-in-out;
+	transition: 0.5s;
 }
-.navBarSearchCategoryIcon {
-	transition: all 0.3s ease;
-}
+
 .rotateIcon {
 	rotate: 180deg;
 	transition: all 0.3s ease;
 }
+
 /*LEFT SIDE */
 
 /*RIGHT SIDE */
@@ -161,14 +163,84 @@ svg {
 	font-size: 0.85rem;
 	font-weight: 700;
 	color: var(--fontcolornav);
-	margin-left: 1rem;
+	padding-left: 1rem;
 }
 .underNavBarList > div {
 	cursor: pointer;
 }
-
+.underNavBarList > div:hover {
+	color: red;
+	transition: color 0.3s ease;
+}
 .underNavBarList > div > span {
 	margin: 0 0.45rem;
 }
 
 /* NAVBAR DOWN*/
+/* Main section*/
+.zeldaImageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1.8rem;
+	padding-left: max(1rem, 1.8rem);
+	padding-right: max(1rem, 1.8rem);
+	background-color: black;
+	cursor: pointer;
+}
+.imgZelda {
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: -3.5rem;
+}
+
+.descriptionBar {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-bottom: 1px solid var(--separator);
+	background-color: white;
+	padding: 6rem 0rem 3.3rem 0rem;
+}
+.descriptionZeldaImg {
+	display: flex;
+	align-items: center;
+	color: var(--fontcolornav);
+	font-size: 1.12rem;
+	margin-left: 2rem;
+}
+
+.descriptionZeldaImg > a > button {
+	background-color: var(--navbarcolor);
+	border: none;
+	color: white;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 1rem 1.5rem;
+	border-radius: 5px;
+	margin-left: min(1.5rem);
+	margin-right: min(1.5rem);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.violenceSign {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 0.7rem;
+	white-space: nowrap;
+	margin-right: 2rem;
+}
+.violenceSign > a > svg {
+	transform: scale(1.15);
+}
+.violenceSignText {
+	color: grey;
+	text-decoration: none;
+	padding: 2rem 0;
+}
+/* Main section*/
