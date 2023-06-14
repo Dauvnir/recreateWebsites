@@ -96,23 +96,57 @@ svg {
 	margin-right: 0.6rem;
 }
 
-#allCategoriesDiv {
+.allCategoriesDiv {
 	white-space: nowrap;
+	margin-right: min(-4rem);
+}
+.allCategoriesDiv > a {
+	margin-left: 0.5rem;
 }
 .searchBar:hover {
 	border-color: red;
 	transition: 0.5s;
 }
-#allCategoriesDiv:hover > * {
+.allCategoriesDiv:hover > *:not(.allCategoriesMenu) {
 	color: red;
 	transition: 0.5s;
+	cursor: pointer;
+}
+.navBarSearchCategoryIcon {
+	display: inline-block;
+}
+.allCategoriesMenu {
+	position: absolute;
+	background-color: white;
+	border: 1px var(--separator) solid;
+	z-index: 1;
+	list-style: none;
+	font-size: 0.65rem;
+	font-weight: 700;
+	color: var(--fontcolornav);
+	border-radius: 5px;
+	padding: 0;
+	margin-top: 0.5rem;
 }
 
-.rotateIcon {
-	rotate: 180deg;
-	transition: all 0.3s ease;
+.allCategoriesMenu > li {
+	width: 100%;
+	display: block;
+	padding: 0.5rem 3rem 0.5rem 0.5rem;
 }
-
+.allCategoriesMenu > li:first-child {
+	margin-top: 0.2rem;
+	background-color: var(--separator);
+}
+.allCategoriesMenu > li:last-child {
+	margin-bottom: 0.2rem;
+}
+.allCategoriesMenu > li:hover {
+	background-color: rgb(243, 243, 243);
+}
+.hideMenu {
+	display: none;
+}
 /*LEFT SIDE */
 
 /*RIGHT SIDE */
@@ -175,6 +209,10 @@ svg {
 .underNavBarList > div > span {
 	margin: 0 0.45rem;
 }
+.rotateIcon {
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
 
 /* NAVBAR DOWN*/
 /* Main section*/
@@ -185,7 +223,7 @@ svg {
 	padding-top: 1.8rem;
 	padding-left: max(1rem, 1.8rem);
 	padding-right: max(1rem, 1.8rem);
-	background-color: black;
+	background: url(https://assets.nintendo.com/image/upload/q_auto:good/f_auto/dpr_2.0/ncom/en_US/merchandising/center-stage-banner/the-legend-of-zelda-tears-of-the-kingdom-switch/640x640_bg_center);
 	cursor: pointer;
 }
 .imgZelda {
