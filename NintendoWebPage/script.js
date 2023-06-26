@@ -8,6 +8,10 @@ const searchIcon = document.querySelector('.fa-magnifying-glass');
 const allCategoriesDivNav = document.querySelector('.allCategoriesDiv');
 const menuFaIconArrow = document.querySelector('.allCategoriesMenu');
 const firstchildMenuNavBar = document.querySelector('.allCategoriesMenu :nth-child(1)');
+const xButtonClose = document.querySelector('.xButtonToClose');
+const navBarSearchSlideDown = document.querySelector('.navBarSearchSlideDown');
+const navBarSearch = document.querySelector('.navBarSearch');
+const navBarList = document.querySelector('.navBarList');
 const changeInputPlaceholder = (e) => {
 	if (searchInput.placeholder == 'Search') {
 		searchInput.placeholder = 'Search games, hardware, news, etc';
@@ -56,6 +60,32 @@ const colorChangeHoverMenuCategories2 = () => {
 	}
 };
 
+const closeAllcategoriesMenu = (event) => {
+	if (!allCategoriesDivNav.contains(event.target)) {
+		menuFaIconArrow.classList.add('hideMenu');
+		faIconArrow.classList.remove('rotateIcon');
+	}
+};
+
+const closeTopSlideMenu = (event) => {
+	if (!navBarSearchSlideDown.contains(event.target) && !searchInput.contains(event.target)) {
+		navBarSearchSlideDown.style.transform = 'translateY(-30.5rem)';
+		xButtonClose.style.visibility = 'hidden';
+		navBarSearch.style.borderBottom = '1px solid var(--separator)';
+		navBarList.style.zIndex = '3';
+		searchIcon.style.transform = 'scale(1)';
+		searchInput.placeholder = 'Search';
+	}
+};
+const showTopSlideMenu = () => {
+	navBarSearchSlideDown.style.visibility = 'visible';
+	xButtonClose.style.visibility = 'visible';
+	navBarSearchSlideDown.style.transform = 'translateY(0rem)';
+	navBarSearch.style.borderBottom = '0px';
+	navBarList.style.zIndex = '1';
+	searchIcon.style.transform = 'scale(0.9)';
+	searchInput.placeholder = 'Search games, hardware, news, etc';
+};
 searchInput.addEventListener('click', changeInputPlaceholder);
 searchInput.addEventListener('mouseover', changeOnOverHoverColor);
 searchInput.addEventListener('mouseleave', changeOnLeaveHoverColor);
@@ -66,3 +96,7 @@ allCategoriesDivNav.addEventListener('click', arrowsFirstChildFixNavBar);
 firstchildMenuNavBar.addEventListener('mouseout', colorChangeHoverMenuCategories);
 firstchildMenuNavBar.addEventListener('mouseover', colorChangeHoverMenuCategories2);
 menuFaIconArrow.addEventListener('mouseout', colorChangeHoverMenuCategories);
+document.addEventListener('click', closeAllcategoriesMenu);
+xButtonClose.addEventListener('click', closeTopSlideMenu);
+searchInput.addEventListener('click', showTopSlideMenu);
+document.addEventListener('click', closeTopSlideMenu);

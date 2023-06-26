@@ -18,6 +18,11 @@ svg {
 @media screen and (max-width: 950px) {
 	.wrapper {
 		background-color: var(--navbarcolor);
+		border-bottom: none !important;
+	}
+	.navBarSearch {
+		background-color: var(--navbarcolor) !important;
+		border-bottom: 0px !important;
 	}
 	.searchBar:not(:first-child),
 	.navBarList:not(:first-child) {
@@ -36,11 +41,21 @@ svg {
 	.underNavBarList:not(:first-child) {
 		display: none;
 	}
+	.navBarSearchSlideDown {
+		display: none;
+	}
+	.xButtonToClose {
+		display: none;
+	}
+}
+@media screen and (min-width: 950px) {
+	.navBarDownMobile:not(:first-child) {
+		display: none;
+	}
 }
 
 .wrapper {
 	display: flex;
-	border-bottom: 1px solid var(--separator);
 	position: sticky;
 	height: 3.3rem;
 }
@@ -51,10 +66,14 @@ svg {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
-	max-width: 55%;
+	z-index: 3;
+	position: relative;
+	background-color: white;
+	border-bottom: solid 1px var(--separator);
 }
+
 .searchBar {
-	min-width: 37%;
+	min-width: 35%;
 	padding: 0.5rem 0;
 	border-bottom: 1px solid black;
 	display: flex;
@@ -93,7 +112,7 @@ svg {
 	font-family: 'Raleway', sans-serif;
 	color: var(--fontcolornav);
 	white-space: nowrap;
-	margin-right: 0.6rem;
+	padding-right: 0.5rem;
 }
 
 .allCategoriesDiv {
@@ -102,6 +121,7 @@ svg {
 }
 .allCategoriesDiv > a {
 	margin-left: 0.5rem;
+	margin-right: 3rem;
 }
 .searchBar:hover {
 	border-color: red;
@@ -127,6 +147,7 @@ svg {
 	border-radius: 5px;
 	padding: 0;
 	margin-top: 0.5rem;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.212);
 }
 
 .allCategoriesMenu > li {
@@ -147,6 +168,81 @@ svg {
 .hideMenu {
 	display: none;
 }
+/* NAVBAR SLIDE DOWN */
+.xButtonToClose {
+	visibility: hidden;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.navBarSearchSlideDown {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	visibility: hidden;
+	min-height: 13.5rem;
+	background-color: white;
+	color: var(--fontcolornav);
+	padding: 5rem 5rem 2rem 7.4rem;
+	transition: transform 500ms ease-in-out;
+}
+.navBarSearchSlideDown > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.listCategories {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 30%;
+	height: inherit;
+	font-weight: 700;
+	font-size: 0.875rem;
+	margin-top: -0.875rem;
+}
+.listCategories ul {
+	padding-left: 0;
+	width: 100%;
+}
+.listCategories li {
+	display: block;
+	cursor: pointer;
+
+	list-style: none;
+	margin-top: 0.875rem;
+}
+.listCategories li a:hover {
+	color: rgb(160, 0, 0);
+}
+.listCategories li a {
+	text-decoration: none;
+	color: rgb(220, 0, 0);
+}
+.trendingPosts {
+	width: 70%;
+}
+.topStoreProducts {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.topStoreProducts1 {
+	min-width: none;
+}
+.topStoreProducts1Zelda {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: scale(0.7);
+}
+
+.description {
+	text-align: left;
+}
+/* NAVBAR SLIDE DOWN */
 /*LEFT SIDE */
 
 /*RIGHT SIDE */
@@ -162,6 +258,8 @@ svg {
 	font-size: 0.8rem;
 	font-weight: 700;
 	white-space: nowrap;
+	z-index: 3;
+	border-bottom: 1px solid var(--separator);
 }
 
 .navBarList > * {
@@ -215,7 +313,66 @@ svg {
 }
 
 /* NAVBAR DOWN*/
+
+/* Mobile Navbar*/
+.navBarDownMobile {
+	width: 100%;
+	height: calc(58px + 1rem);
+	bottom: 0px;
+	display: block;
+	position: fixed;
+	z-index: 1000;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.navBarMobile {
+	width: inherit;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 58px;
+	border-radius: 100px;
+	background: white;
+	color: grey;
+	max-width: 27.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.navBarMobile > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: #484848;
+	border: 1px;
+	gap: 2rem;
+}
+.searchIcon {
+	background: red;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	color: white !important;
+	margin-top: -1rem;
+}
+.hamburgerIcon,
+.heartIcon,
+.shoppingCartIcon,
+.accountIcon {
+	padding: 1rem 2.1rem;
+}
+.hamburgerIcon:hover,
+.heartIcon:hover,
+.shoppingCartIcon:hover,
+.accountIcon:hover {
+	color: red;
+	transition: all ease-in 0.2s;
+}
+/* Mobile Navbar*/
 /* Main section*/
+.main {
+	position: relative;
+	z-index: -1;
+}
 .zeldaImageContainer {
 	display: flex;
 	justify-content: center;
