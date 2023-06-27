@@ -41,7 +41,7 @@ svg {
 	.underNavBarList:not(:first-child) {
 		display: none;
 	}
-	.navBarSearchSlideDown {
+	.navBarSearchSlideDown:not(:first-child) {
 		display: none;
 	}
 	.xButtonToClose {
@@ -51,6 +51,15 @@ svg {
 @media screen and (min-width: 950px) {
 	.navBarDownMobile:not(:first-child) {
 		display: none;
+	}
+}
+@media screen and (max-width: 1340px) {
+	.slideDownBar {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.trendingPosts {
+		margin: 2rem 0 0 -4.2rem !important;
 	}
 }
 
@@ -183,24 +192,20 @@ svg {
 	min-height: 13.5rem;
 	background-color: white;
 	color: var(--fontcolornav);
-	padding: 5rem 5rem 2rem 7.4rem;
+	padding: 4rem 5rem 2rem 7.4rem;
 	transition: transform 500ms ease-in-out;
-}
-.navBarSearchSlideDown > div {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
-.listCategories {
-	display: flex;
-	justify-content: center;
+.slideDownBar {
+	display: inline-flex;
 	align-items: baseline;
-	flex-direction: column;
-	flex-wrap: wrap;
-	width: 30%;
-	height: inherit;
+}
+
+.listCategories {
+	min-width: 33%;
 	font-weight: 700;
-	font-size: 0.875rem;
+	font-size: 0.9rem;
 	margin-top: -0.875rem;
 }
 .listCategories ul {
@@ -222,25 +227,78 @@ svg {
 	color: rgb(220, 0, 0);
 }
 .trendingPosts {
-	width: 70%;
+	margin-left: 5rem;
+	max-height: 15rem;
 }
-.topStoreProducts {
+.trendingPosts2 {
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
+	flex-direction: column;
+	width: 100%;
 }
-.topStoreProducts1 {
-	min-width: none;
+.trendingPosts2 h4 {
+	padding-left: 4.2rem;
 }
-.topStoreProducts1Zelda {
+.Posts {
 	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	margin-bottom: -1rem;
+}
+.miniIcon {
+	display: inline-flex;
 	align-items: center;
-	justify-content: center;
+	border: 1px solid var(--separator);
+	border-radius: 6px;
 	transform: scale(0.7);
 }
-
-.description {
-	text-align: left;
+.miniIcon img {
+	display: block;
+	border-radius: 5px 0px 0px 5px;
+}
+.halfPosts {
+	max-width: 38%;
+}
+.titleIcon {
+	margin: 0 1.5rem 0 1rem;
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+}
+.redSeperator {
+	display: block;
+	height: 1.3rem;
+	width: 2px;
+	background-color: red;
+}
+.inlineAddDescription {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	line-height: 2.5rem;
+}
+.inlineAddDescription span {
+	font-size: 1.3rem;
+	white-space: nowrap;
+}
+.inlineAddDescription button {
+	background: none;
+	border: none;
+	color: red;
+	margin-left: 1rem;
+}
+.inlineAddDescription > button > svg {
+	transform: scale(1.7);
+}
+.sparks {
+	display: none;
+}
+.title {
+	white-space: nowrap;
+}
+.heart-filled {
+	color: white;
+}
+.heart-outline {
+	color: red;
 }
 /* NAVBAR SLIDE DOWN */
 /*LEFT SIDE */
