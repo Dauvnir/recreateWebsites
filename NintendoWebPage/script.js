@@ -12,6 +12,8 @@ const xButtonClose = document.querySelector('.xButtonToClose');
 const navBarSearchSlideDown = document.querySelector('.navBarSearchSlideDown');
 const navBarSearch = document.querySelector('.navBarSearch');
 const navBarList = document.querySelector('.navBarList');
+const heartSpark = document.querySelectorAll('.sparks');
+const heartButtons = document.querySelectorAll('.heartButton');
 const changeInputPlaceholder = (e) => {
 	if (searchInput.placeholder == 'Search') {
 		searchInput.placeholder = 'Search games, hardware, news, etc';
@@ -39,6 +41,39 @@ for (const arrowsChild of faIconArrowParents) {
 		} else {
 			lastChild.classList.add('rotateIcon');
 		}
+	});
+}
+// for (const heartSparks of heartSpark) {
+// 	for (const heartButton of heartButtons) {
+// 		heartButton.addEventListener('mouseenter', function showSparks1() {
+// 			heartSparks.classList.add('sparks2');
+// 		});
+// 	}
+// }
+
+// for (const heartSparks of heartSpark) {
+// 	for (const heartButton of heartButtons) {
+// 		heartButton.addEventListener('mouseleave', function showSparks2() {
+// 			heartSparks.classList.remove('sparks2');
+// 		});
+// 	}
+// }
+for (const heartButton of heartButtons) {
+	heartButton.addEventListener('mouseover', function rotateIcons() {
+		let lastChildHeartButton = heartButton.lastElementChild;
+		lastChildHeartButton.style.transition = 'all 0.5s';
+		lastChildHeartButton.classList.remove('sparks2');
+		setTimeout(() => {
+			lastChildHeartButton.classList.add('sparks2');
+			lastChildHeartButton.style.transition = 'all 0.5s';
+		}, '500');
+	});
+}
+for (const heartButton of heartButtons) {
+	heartButton.addEventListener('mouseleave', function rotateIcons() {
+		let lastChildHeartButton = heartButton.lastElementChild;
+		lastChildHeartButton.classList.add('sparks2');
+		lastChildHeartButton.style.transition = 'all 0.5s';
 	});
 }
 const hideMenuNavBar = () => {
@@ -73,8 +108,11 @@ const closeTopSlideMenu = (event) => {
 		xButtonClose.style.visibility = 'hidden';
 		navBarSearch.style.borderBottom = '1px solid var(--separator)';
 		navBarList.style.zIndex = '3';
+		navBarList.style.borderBottom = '1px solid var(--separator)';
 		searchIcon.style.transform = 'scale(1)';
 		searchInput.placeholder = 'Search';
+		document.body.style.overflow = 'scroll';
+		document.getElementById('overlay').classList.remove('wrapIt');
 	}
 };
 const showTopSlideMenu = () => {
@@ -82,9 +120,12 @@ const showTopSlideMenu = () => {
 	xButtonClose.style.visibility = 'visible';
 	navBarSearchSlideDown.style.transform = 'translateY(0rem)';
 	navBarSearch.style.borderBottom = '0px';
+	navBarList.style.borderBottom = '0px';
 	navBarList.style.zIndex = '1';
 	searchIcon.style.transform = 'scale(0.9)';
 	searchInput.placeholder = 'Search games, hardware, news, etc';
+	document.body.style.overflow = 'hidden';
+	document.getElementById('overlay').classList.add('wrapIt');
 };
 searchInput.addEventListener('click', changeInputPlaceholder);
 searchInput.addEventListener('mouseover', changeOnOverHoverColor);

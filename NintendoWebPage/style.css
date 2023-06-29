@@ -178,10 +178,13 @@ svg {
 	display: none;
 }
 /* NAVBAR SLIDE DOWN */
+
 .xButtonToClose {
 	visibility: hidden;
 	z-index: 2;
 	cursor: pointer;
+	color: #484848;
+	transform: scale(0.9);
 }
 
 .navBarSearchSlideDown {
@@ -193,7 +196,7 @@ svg {
 	background-color: white;
 	color: var(--fontcolornav);
 	padding: 4rem 5rem 2rem 7.4rem;
-	transition: transform 500ms ease-in-out;
+	transition: transform 250ms ease-in-out;
 	display: flex;
 	justify-content: space-between;
 }
@@ -250,6 +253,7 @@ svg {
 	border: 1px solid var(--separator);
 	border-radius: 6px;
 	transform: scale(0.7);
+	cursor: pointer;
 }
 .miniIcon img {
 	display: block;
@@ -258,10 +262,20 @@ svg {
 .halfPosts {
 	max-width: 38%;
 }
+
 .titleIcon {
 	margin: 0 1.5rem 0 1rem;
 	font-size: 1.4rem;
 	line-height: 1.8rem;
+	height: 7rem;
+	padding-top: 0.5rem;
+}
+.centerIt {
+	line-height: 3rem !important;
+	padding-top: 0rem !important;
+}
+.centerIt > .inlineAddDescription {
+	margin-top: 1.2rem;
 }
 .redSeperator {
 	display: block;
@@ -284,21 +298,57 @@ svg {
 	border: none;
 	color: red;
 	margin-left: 1rem;
+	cursor: pointer;
 }
 .inlineAddDescription > button > svg {
 	transform: scale(1.7);
 }
-.sparks {
-	display: none;
+.sparks2 {
+	visibility: hidden;
 }
+
 .title {
 	white-space: nowrap;
 }
+
 .heart-filled {
 	color: white;
 }
 .heart-outline {
 	color: red;
+}
+.miniIcon:hover > .titleIcon > .title {
+	color: red;
+}
+.overlay {
+	position: relative;
+}
+.overlay::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+.miniIcon:hover > .overlay::before {
+	background-color: rgba(0, 0, 0, 0.25);
+	transition: all 0.5s;
+}
+.wrapIt {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+.wrapIt:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	background-color: rgba(0, 0, 0, 0.25);
+	visibility: visible;
 }
 /* NAVBAR SLIDE DOWN */
 /*LEFT SIDE */
@@ -318,6 +368,7 @@ svg {
 	white-space: nowrap;
 	z-index: 3;
 	border-bottom: 1px solid var(--separator);
+	background-color: white;
 }
 
 .navBarList > * {
@@ -354,6 +405,7 @@ svg {
 	font-weight: 700;
 	color: var(--fontcolornav);
 	padding-left: 1rem;
+	background-color: white;
 }
 .underNavBarList > div {
 	cursor: pointer;
@@ -440,6 +492,7 @@ svg {
 	padding-right: max(1rem, 1.8rem);
 	background: url(https://assets.nintendo.com/image/upload/q_auto:good/f_auto/dpr_2.0/ncom/en_US/merchandising/center-stage-banner/the-legend-of-zelda-tears-of-the-kingdom-switch/640x640_bg_center);
 	cursor: pointer;
+	z-index: 1;
 }
 .imgZelda {
 	width: 100%;
